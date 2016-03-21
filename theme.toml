@@ -1,0 +1,12 @@
+name = "Sabayon"
+license = "MIT"
+licenselink = "https://github.com/Sabayon/sabayon-website-next-theme/blob/master/LICENSE.md"
+description = "Official Sabayon website theme"
+homepage = "https://github.com/Sabayon/sabayon-website-next-theme"
+tags = ["blog"]
+features = ["Simple Design", "Blog"]
+min_version = 0.14
+
+[author]
+  name = "mudler"
+  homepage = "https://blog.mudler.pm"
