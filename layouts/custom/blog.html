@@ -6,7 +6,7 @@
 
         <div class="col-md-9">
 
-        {{ range first 5 (where .Site.Pages "Section" "post") }}
+        {{ range first 5 (where .Site.Pages "Section" "article") }}
             {{ .Render "summary" }}
         {{ end }}
         </div>
