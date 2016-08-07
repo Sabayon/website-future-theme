@@ -1,4 +1,31 @@
 {{ partial "header.html" . }}
+<style type="text/css">
+  .content ol,
+  .content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .content ol ul ul {
+      list-style-type: circle;
+  }
+
+  .content ol ul ul li {
+      list-style-image: url(https://www.sabayon.org/sites/all/themes/sabayon/img/bullet.png);
+      margin: 0.1em 0 0.1em 1em;
+  }
+
+  .content ol ul h4 {
+      margin-bottom: 0;
+  }
+
+  .content img {
+    float: right;
+    display: inline-block;
+    height: 128px;
+    width: 128px;
+  }
+</style>
 <body>
 {{ partial "navbar.html" . }}
 <div class="container">

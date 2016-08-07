@@ -1,0 +1,63 @@
+{{ partial "header.html" . }}
+<style type="text/css">
+  .content em {
+    font-weight: normal;
+    text-decoration: underline;
+  }
+
+  .content h3 {
+    font-size: 1em;
+  }
+
+  .content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .content ul li {
+    text-align: center;
+  }
+
+  .content ul li p,
+  .content h3,
+  .content div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .content div h3 {
+    display: block;
+    text-align: left;
+  }
+
+  .content ul ~ p {
+    display: block;
+    max-width: 464px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content ul + p {
+    margin-bottom: 2em;
+  }
+</style>
+<body>
+{{ partial "navbar.html" . }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm content">
+                    <h3>{{ .Title }}<br> <small>{{ .Description }}</small></h3>
+                    <hr>
+                    {{ .Content }}
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            {{ partial "menu.html" . }}
+        </div>
+    </div>
+{{ partial "footer.copyright.html" . }}
+</div>
+{{ partial "footer.html" . }}

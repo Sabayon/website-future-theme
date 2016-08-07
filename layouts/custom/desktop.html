@@ -1,0 +1,154 @@
+{{ partial "header.html" . }}
+<style type="text/css">
+  .content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .content li {
+    min-height: 110px;
+    margin-bottom: 4px;
+  }
+
+  .content li li {
+    display: inline-block;
+    min-height: auto;
+  }
+
+  .content h4 {
+    display: block;
+    margin-top: -100px;
+    margin-left: 140px;
+  }
+
+  .content ul ~ h4 {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .content h4 a[href$='/donate'] {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #fff;
+    background: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  .content h4 a[href$='/donate']:active,
+  .content h4 a[href$='/donate']:focus,
+  .content h4 a[href$='/donate']:hover {
+    color: #fff;
+    background: #d62c1a;
+    border-color: #cd2a19;
+    text-decoration: none;
+  }
+
+  .content img {
+    content: " ";
+    display: inline-block;
+    background-color: #ddd;
+    height: 110px;
+    width: 110px;
+    margin-right: 30px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+
+  .content h4 a[href$='/donate']::before {
+    content: "\f004";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    line-height: inherit;
+    color: #fff;
+    background: inherit;
+    border-color: inherit;
+    height: auto;
+    width: auto;
+    margin-right: 0.2em;
+    padding: 0;
+    border-radius: 0;
+    vertical-align: middle;
+  }
+
+  .content li h4 ~ p,
+  .content li h4 ~ ul {
+    margin-left: 140px;
+  }
+
+  .content li h4 ~ ul ~ h4 {
+    margin-left: 0;
+  }
+
+  .content li li a {
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    padding: 1px 5px;
+    border: 1px solid #2c3e50;
+    border-width: 2px;
+    border-radius: 3px;
+  }
+
+  .content li li a:after,
+  .content li li a:focus,
+  .content li li a:hover {
+    color: #fff;
+    background: #1a242f;
+    border-color: #000;
+    text-decoration: none;
+  }
+
+  .content li li a::before {
+    content: "\f0c1";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-right: 0.2em;
+  }
+
+  .content li li a[href$='.iso']::before {
+    content: "\f019";
+  }
+
+  .content li li a[href$='.iso.torrent']::before {
+    content: "\f076";
+  }
+
+  .content li li a[href$='.iso.md5']::before {
+    content: "\f14a";
+  }
+
+  .content li li a[href$='.iso.pkglist']::before {
+    content: "\f03a";
+  }
+</style>
+<body>
+{{ partial "navbar.html" . }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm content">
+                    <h3>{{ .Title }}<br> <small>{{ .Description }}</small></h3>
+                    <hr>
+                    {{ .Content }}
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            {{ partial "menu.html" . }}
+        </div>
+    </div>
+{{ partial "footer.copyright.html" . }}
+</div>
+{{ partial "footer.html" . }}
