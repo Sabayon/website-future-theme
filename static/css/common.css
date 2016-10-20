@@ -240,3 +240,21 @@ div.feature-box div.feature-box-icon i.image-icon.small {
       color:#000;
       border: solid rgba(187, 184, 180, 0.7);
 }
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    background: #000;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    transform: translateY(0%);
+    width: 100%;
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}

@@ -1,0 +1,6 @@
+# Hugo
+public/
+
+# Vim
+*.*~
+*.swp
