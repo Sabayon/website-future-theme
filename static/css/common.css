@@ -241,6 +241,108 @@ div.feature-box div.feature-box-icon i.image-icon.small {
       border: solid rgba(187, 184, 180, 0.7);
 }
 
+h3 a[href='http://dl.sabayon.org/iso/daily/daily.html']::before,
+li a[href$='.iso']::before,
+li a[href$='.img.xz']::before,
+li a[href='https://hub.docker.com/r/sabayon']::before,
+li a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before,
+li a[href='https://www.facebook.com/groups/36125411841']::before,
+li a[href='https://plus.google.com/+sabayon']::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-right: 0.2em;
+}
+
+h3 a[href='http://dl.sabayon.org/iso/daily/daily.html']::before {
+    color: inherit;
+    content: "\f0c3";
+    font-size: inherit;
+    height: auto;
+    margin-right: 0;
+    padding: 0;
+    width: auto;
+}
+
+li a[href$='.iso']::before,
+li a[href$='.img.xz']::before {
+    content: "\f019";
+}
+
+li a[href='https://hub.docker.com/r/sabayon']::before,
+li a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before {
+    content: "\f0c2";
+}
+
+li a[href='https://www.facebook.com/groups/36125411841']::before {
+    content: "\f09a";
+}
+
+li a[href='https://plus.google.com/+sabayon']::before {
+    content: "\f1a0";
+}
+
+a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before {
+    background-image: url("/img/vagrantcloud-logo.png");
+}
+
+a[href$='/donate'] {
+    display: inline-block;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+h4 a[href$='/donate'] {
+    color: #fff;
+    background: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+    padding: 1px 5px;
+}
+
+h4 a[href$='/donate']:active,
+h4 a[href$='/donate']:focus,
+h4 a[href$='/donate']:hover {
+    color: #fff;
+    background: #d62c1a;
+    border-color: #cd2a19;
+    text-decoration: none;
+}
+
+h4 a[href$='/donate']::before,
+a[href$='/donate']::after {
+    content: "\f004";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    line-height: inherit;
+    background: inherit;
+    border-color: inherit;
+    height: auto;
+    width: auto;
+    margin-left: 0.2em;
+    padding: 0;
+    border-radius: 0;
+    vertical-align: middle;
+}
+
+h4 a[href$='/donate']::before {
+    color: #fff;
+    margin-right: 0.2em;
+}
+
+h4 a[href$='/donate']::after,
+li a[href$='/donate']::after {
+    content: "";
+    margin-right: 0;
+}
+
+img[src$="press-header-roll_0.png"],
+img[src="https://joostruis.files.wordpress.com/2015/09/plasma_sab.png?w=582&h=217"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .headroom {
     will-change: transform;
     transition: transform 200ms linear;
