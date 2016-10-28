@@ -1,87 +1,102 @@
-{{ partial "header.html" . }}
-<body>
-<style type="text/css">
-  .content h2 {
-    margin-top: 0;
-  }
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ .Title }} - {{ .Site.BaseURL }}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{{ .Description }}" />
+        <meta name="author" content="Sabayonlinux crew" />
+        <link rel="canonical" href="{{ .Permalink }}">
+        <link rel="shortcut icon" href="https://www.sabayon.org/sites/all/themes/sabayon/favicon.ico" type="image/vnd.microsoft.icon" />
+        {{ if .RSSlink }}<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />{{ end }}
+        {{ partial "header.includes.html" . }}
+        <style type="text/css">
+            .content h2 {
+                margin-top: 0;
+            }
 
-  .content ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-right: 1em;
-  }
+            .content ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin-right: 1em;
+            }
 
-  .content ul li {
-    flex: 1 1 0px;
-    text-align: center;
-  }
+            .content ul li {
+                flex: 1 1 0px;
+                text-align: center;
+            }
 
-  .content a[href$='/cloud']::before {
-    content: "\f0c2";
-    color: #ade0db;
-    background-color: ##ebf2f2;
-  }
+            .content a[href$='/cloud']::before {
+                content: "\f0c2";
+                color: #ade0db;
+                background-color: ##ebf2f2;
+            }
 
-  .content a[href$='/desktop']::before {
-    content: "\f108";
-    color: #000;
-    background-color: #9bc1c5;
-  }
+            .content a[href$='/desktop']::before {
+                content: "\f108";
+                color: #000;
+                background-color: #9bc1c5;
+            }
 
-  .content a[href$='/server']::before {
-    content: "\f233";
-    color: #000;
-    background-color: #c0d5c2;
-  }
+            .content a[href$='/server']::before {
+                content: "\f233";
+                color: #000;
+                background-color: #c0d5c2;
+            }
 
-  .content a::before {
-    color: #000;
-    display: block;
-    width: 110px;
-    height: 110px;
-    padding: 10px 16px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 10.5px;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 72px;
-    text-decoration: none;
-    line-height: 1.33;
-    border: 2px solid transparent;
-    border-radius: 35px;
-    cursor: pointer;
-  }
+            .content a::before {
+                color: #000;
+                display: block;
+                width: 110px;
+                height: 110px;
+                padding: 10px 16px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 10.5px;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 72px;
+                text-decoration: none;
+                line-height: 1.33;
+                border: 2px solid transparent;
+                border-radius: 35px;
+                cursor: pointer;
+            }
 
-  .content a[href$='/desktop']:active,
-  .content a[href$='/desktop']:focus,
-  .content a[href$='/desktop']:hover {
-    outline: 0;
-    text-decoration: none;
-  }
+            .content a[href$='/desktop']:active,
+            .content a[href$='/desktop']:focus,
+            .content a[href$='/desktop']:hover {
+                outline: 0;
+                text-decoration: none;
+            }
 
-  .content a[href$='/desktop']:active::before,
-  .content a[href$='/desktop']:focus::before,
-  .content a[href$='/desktop']:hover::before {
-    color: #fff;
-  }
-</style>
-{{ partial "navbar.html" . }}
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="well well-sm content">
-                    <h3>{{ .Title }}<br> <small>{{ .Description }}</small></h3>
-                    <hr>
-                    {{ .Content }}
+            .content a[href$='/desktop']:active::before,
+            .content a[href$='/desktop']:focus::before,
+            .content a[href$='/desktop']:hover::before {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        {{ partial "navbar.html" . }}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="well well-sm content">
+                        <h3>{{ .Title }}<br> <small>{{ .Description }}</small></h3>
+                        <hr>
+                        {{ .Content }}
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-3">
+                    {{ partial "menu.html" . }}
+                </div>
             </div>
+            {{ partial "footer.copyright.html" . }}
         </div>
-
-        <!-- Sidebar -->
-        <div class="col-md-3">
-            {{ partial "menu.html" . }}
-        </div>
-    </div>
-{{ partial "footer.copyright.html" . }}
-</div>
-{{ partial "footer.html" . }}
+        {{ partial "footer.includes.html" . }}
+    </body>
+</html>
