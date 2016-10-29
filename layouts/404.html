@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ .Title }} - {{ .Site.BaseURL }}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{{ .Description }}" />
+        <meta name="author" content="Sabayonlinux crew" />
+        <link rel="canonical" href="{{ .Permalink }}">
+        <link rel="shortcut icon" href="https://www.sabayon.org/sites/all/themes/sabayon/favicon.ico" type="image/vnd.microsoft.icon" />
+        {{ if .RSSlink }}<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />{{ end }}
+        {{ partial "header.includes.html" . }}
+    </head>
+<body>
+{{ partial "navbar.html" . }}
+
+<div class="container">
+    <div class="row">
+  <div>
+   <h1 id="title">{{ .Title }} .... Whoops! something bad happened here</h1>
+    <center><img src="http://files.sharenator.com/121256xcitefun_error_404_1-s600x398-220298.jpg" class="img-responsive"></center>
+    <p>I couldn't find what you were looking for! The admins was notified, don't worry!</p>
+  </div>
+    </div>
+{{ partial "footer.copyright.html" . }}
+</div>
+{{ partial "footer.includes.html" . }}
