@@ -262,6 +262,13 @@ li a[href$='.img.xz']::before {
     content: "\f019";
 }
 
+.desktop li a[href$='.iso']::before,
+.desktop li a[href$='.img.xz']::before,
+.server li a[href$='.iso']::before,
+.server li a[href$='.img.xz']::before {
+    content: "";
+}
+
 li a[href='https://hub.docker.com/r/sabayon']::before,
 li a[href='https://atlas.hashicorp.com/Sabayon/boxes/spinbase-amd64']::before {
     content: "\f0c2";
