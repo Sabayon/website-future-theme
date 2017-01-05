@@ -355,3 +355,7 @@ img[src="https://joostruis.files.wordpress.com/2015/09/plasma_sab.png?w=582&h=21
 .headroom--unpinned {
     transform: translateY(-100%);
 }
+
+.headroom--pinned + .container {
+    padding-top: 70px;  /* min-height of .navbar + a bit spacing */
+}
