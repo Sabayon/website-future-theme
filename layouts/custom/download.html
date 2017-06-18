@@ -46,6 +46,12 @@
                 background-color: #c0d5c2;
             }
 
+            .content a[href$='/embedded']::before {
+                content: "\f108";
+                color: #000;
+                background-color: #9bc1c5;
+            }
+
             .content a::before {
                 color: #000;
                 display: block;
@@ -74,6 +80,12 @@
             .content a[href$='/desktop']:active::before,
             .content a[href$='/desktop']:focus::before,
             .content a[href$='/desktop']:hover::before {
+                color: #fff;
+            }
+
+            .content a[href$='/embedded']:active::before,
+            .content a[href$='/embedded']:focus::before,
+            .content a[href$='/embedded']:hover::before {
                 color: #fff;
             }
         </style>
