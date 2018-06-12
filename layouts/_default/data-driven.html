@@ -1,0 +1,13 @@
+{{ define "main" }}
+    {{- $partial := .Params.partial -}}
+    {{- $jsonPath := .Params.json -}}
+    {{- $data := getJSON $jsonPath -}}
+    <main>
+        {{ partial "pagenav.html" . }}
+        <article>
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+            {{ partial $partial (dict "data" $data) }}
+        </article>
+    </main>
+{{ end }}

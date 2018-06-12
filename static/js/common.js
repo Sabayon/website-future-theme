@@ -1,18 +1,39 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    var $navBarAtTop, headroom;
 
-    // All outside links opens in a new page ootb
-    $("a[href^='http://'], a[href^='https://']").each(function(){
-        if(this.href.indexOf(location.hostname) === -1) {
-            $(this).attr('target', '_blank');
+    function makeExternalLinksOpenInNewTab () {
+        var httpLinks, httpsLinks, links, slice;
+
+        httpLinks = document.querySelectorAll('a[href^="http://"]');
+        httpsLinks = document.querySelectorAll('a[href^="https://"]');
+
+        slice = Array.prototype.slice;
+        links = slice.call(httpLinks).concat(
+                slice.call(httpsLinks)
+        ).forEach(function (link) {
+            var previousRel, newRel;
+
+            // All outside links opens in a new page ootb
+            if (!link.href.includes(location.hostname)) {
+                previousRel = link.getAttribute('rel') || '';
+                newRel = previousRel + ' noopener noreferrer';
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', newRel);
+            }
+        });
+    };
+
+    function initialiseHeadroom () {
+        var navigation, headroom;
+
+        // Show/hide navbar depending on scroll behaviour
+        navigation = document.querySelector('header nav');
+        if (navigation && 'Headroom' in window) {
+            headroom = new Headroom(navigation);
+            headroom.init();
         }
-    });
-
-    // Show/hide navbar depending on scroll behaviour
-    $navBarAtTop = $('#top-nav');
-    if ($navBarAtTop.length > 0 && 'Headroom' in window) {
-        headroom = new Headroom($navBarAtTop[0]);
-        headroom.init();
     }
+
+    makeExternalLinksOpenInNewTab();
+    initialiseHeadroom();
 });

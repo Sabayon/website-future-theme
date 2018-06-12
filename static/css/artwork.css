@@ -1,0 +1,48 @@
+.artwork {
+    display: grid;
+    grid-template-areas:
+        "headline headline"
+        "call-to-action call-to-action"
+        "image image"
+        "text text";
+}
+
+@media (min-width: 25em) {
+    .artwork {
+        grid-template-areas:
+            "headline call-to-action"
+            "image image"
+            "text text";
+    }
+}
+
+.artwork h1 {
+    grid-area: headline;
+}
+
+.artwork p {
+    grid-area: image;
+}
+
+.artwork p:first-of-type {
+    grid-area: call-to-action;
+}
+
+.artwork p:last-of-type {
+    grid-area: text
+}
+
+.artwork a {
+    display: inline-block;
+    background-color: var(--primary-foreground-colour);
+
+    margin-top: 0.5em;
+    padding: 0.25em 0.5em;
+
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.artwork a + a {
+    background-color: rgba(0, 0, 0, 0.75);
+}

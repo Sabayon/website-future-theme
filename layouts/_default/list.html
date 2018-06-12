@@ -1,0 +1,36 @@
+{{ define "main" }}
+    <main>
+        {{ partial "pagenav.html" . }}
+        <article>
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+            {{ if eq .Section "blog" }}
+                <ul>
+                    {{ range .Data.Pages }}
+                        <li>
+                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                            <p>Posted on {{ .Date.Format "Jan 2, 2006" }}</p>
+                            <p>{{ .Description }}</p>
+                            <p>{{ .Summary }}</p>
+                            <a href="{{ .Permalink }}">Read More</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+              {{ if .Data.Pages }}
+                {{ range .Data.Pages }}
+                  <p>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </p>
+                {{ end }}
+              {{ else }}
+                {{ range .Sections }}
+                    <p>
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </p>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+        </article>
+    </main>
+{{ end }}

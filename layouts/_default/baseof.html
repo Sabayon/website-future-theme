@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ partial "meta.html" . }}
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/grid.css" />
+        <link rel="stylesheet" href="/css/theme.css" />
+        <link rel="stylesheet" href="/css/jquery.typeahead.min.css" />
+        <!--
+        {{ partial "header.includes.html" . }}
+        -->
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ block "header" . }}
+                <header>
+                    {{ partial "mainnav.html" . }}
+                </header>
+            {{ end }}
+            {{ block "main" . }}{{ end }}
+            {{ block "footer" . }}
+                <footer>
+                    {{ partial "footer.links.html" . }}
+                    {{ partial "footer.copyright.html" . }}
+                    {{ partial "footer.includes.html" . }}
+                </footer>
+            {{ end }}
+        </div>
+    </body>
+</html>
