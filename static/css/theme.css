@@ -1,7 +1,8 @@
 :root {
-    --primary-foreground-colour: blue;
+    --primary-foreground-colour: #2626d9;
     --secondary-foreground-colour: lightgray;
     --background-colour: #111111;
+    --secondary-background-colour: #d3d3d3;
     --text-colour: #d3d3d3;
     --card-background-colour: #2b2e31;
     --card-text-colour: #d3d3d3;
@@ -57,6 +58,7 @@ nav li a.active {
 }
 
 .hero-image img {
+    background-color: var(--secondary-background-colour);
     max-width: calc(100% + 2 * var(--global-padding));
     margin-left: calc(-1 * var(--global-padding));
 }
