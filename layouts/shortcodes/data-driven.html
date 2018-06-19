@@ -1,0 +1,5 @@
+{{- $partial := .Params.partial -}}
+{{- $jsonPath := .Params.json -}}
+{{- $data := getJSON $jsonPath -}}
+
+{{ partial $partial (dict "data" $data) }}
