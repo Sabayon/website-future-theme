@@ -4,12 +4,17 @@
 
 .wrapper {
     display: grid;
+    grid-template-columns: 100%;
     grid-template-areas:
-        "header" "main" "aside" "footer";
+        "header"
+        "main"
+        "aside"
+        "footer";
 }
 
 @media (min-width: 21em) {
     .wrapper {
+        grid-template-columns: 25% 25% 25% 25%;
         grid-template-areas:
           "header header header header"
           "main   main   main   aside"
