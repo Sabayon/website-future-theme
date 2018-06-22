@@ -1,18 +1,20 @@
 .artwork {
     display: grid;
+    grid-template-columns: 50% 50%;
     grid-template-areas:
         "headline headline"
-        "call-to-action call-to-action"
+        "cta cta"
         "image image"
         "text text";
 }
 
 @media (min-width: 25em) {
     .artwork {
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
         grid-template-areas:
-            "headline call-to-action"
-            "image image"
-            "text text";
+            "headline headline cta   cta   cta   cta"
+            "image    image    image image image image"
+            "text     text     text  text  text  text";
     }
 }
 
@@ -25,7 +27,7 @@
 }
 
 .artwork p:first-of-type {
-    grid-area: call-to-action;
+    grid-area: cta;
 }
 
 .artwork p:last-of-type {
@@ -34,9 +36,10 @@
 
 .artwork a {
     display: inline-block;
-    background-color: var(--primary-foreground-colour);
+    background-color: var(--secondary-background-colour);
+    color: var(--secondary-text-colour);
 
-    margin-top: 0.5em;
+    margin-block-end: 0.5em;
     padding: 0.25em 0.5em;
 
     font-family: sans-serif;
@@ -44,5 +47,6 @@
 }
 
 .artwork a + a {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: var(--primary-background-colour);
+    color: var(--primary-text-colour);
 }
