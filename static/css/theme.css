@@ -59,18 +59,43 @@ a {
     --background-colour: var(--primary-background-colour);
     padding: 0.25em 0;
     text-decoration: none;
+    text-decoration-skip-ink: auto;
     -webkit-text-decoration-skip: objects;
 
-    /* Fake underline */
-    background-image: linear-gradient(currentColor, currentColor);
-    background-repeat: no-repeat;
-    background-size: 100% 0.5px;
-    background-position-x: center;
-    background-position-y: bottom 19%;
-    background-origin: padding-box;
+    /* Fake underline, using multiple to cope with sub-pixel computation */
     background-color: transparent;
 
-    /* Don't cut descenders */
+    background-image:
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(currentColor, currentColor);
+  
+    background-size:
+        100% 0.01em,
+        100% 0.07em,
+        100% 0.05em;
+  
+    background-origin:
+        padding-box,
+        padding-box,
+        padding-box;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        repeat-x;
+   
+    background-position-x:
+        0%,
+        100%,
+        0%;
+
+    background-position-y:
+        84%,
+        83%,
+        82%;
+
+     /* Don't cut descenders */
     text-shadow:
         3px 0 var(--background-colour),
         2px 0 var(--background-colour),
@@ -119,7 +144,10 @@ header nav ul li {
 }
 
 header nav ul li a {
-    background-image: linear-gradient(currentColor, currentColor);
+    background-image:
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(currentColor, currentColor);
 }
 
 main ol.pagenav {
