@@ -13,6 +13,7 @@ body {
     background-color: var(--primary-background-colour, #111);
     color: var(--primary-text-colour);
     font-family: sans-serif;
+    font-size: 1em;
 }
 
 header {
@@ -54,11 +55,62 @@ li {
 
 a {
     color: var(--primary-text-colour);
-    padding: 0.25em 0.5em;
+    display: inline;
+    --background-colour: var(--primary-background-colour);
+    padding: 0.25em 0;
+    text-decoration: none;
+    -webkit-text-decoration-skip: objects;
+
+    /* Fake underline */
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 100% 0.5px;
+    background-position-x: center;
+    background-position-y: bottom 19%;
+    background-origin: padding-box;
+    background-color: transparent;
+
+    /* Don't cut descenders */
+    text-shadow:
+        3px 0 var(--background-colour),
+        2px 0 var(--background-colour),
+        1px 0 var(--background-colour),
+        -1px 0 var(--background-colour),
+        -2px 0 var(--background-colour),
+        -3px 0 var(--background-colour);
 }
 
 sup {
     font-size: 50%;
+}
+
+header {
+    background-image: linear-gradient(
+        to right,
+        transparent 5%,
+        currentColor 50%,
+        currentColor 60%,
+        transparent
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 0.5px;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-origin: padding-box;
+    background-color: transparent;
+    margin-block-end: 1em;
+}
+
+main nav {
+    margin: 2em 0.5em;
+}
+
+header nav a {
+    background-image: none;
+}
+
+header nav a img {
+    padding: 1em 4em;
 }
 
 header nav ul li {
@@ -66,12 +118,8 @@ header nav ul li {
     margin-block-end: 1em;
 }
 
-header nav a img {
-    padding: 1em 4em;
-}
-
-main nav {
-    margin: 2em 0.5em;
+header nav ul li a {
+    background-image: linear-gradient(currentColor, currentColor);
 }
 
 main ol.pagenav {
@@ -111,8 +159,28 @@ nav li a.active {
     margin-inline-start: calc(-1 * var(--global-padding));
 }
 
+footer {
+    background-image: linear-gradient(
+        to right,
+        transparent 5%,
+        currentColor 50%,
+        currentColor 60%,
+        transparent
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 0.5px;
+    background-position-x: center;
+    background-position-y: top;
+    background-origin: padding-box;
+    background-color: transparent;
+}
+
 footer section:last-of-type {
     margin-block-end: 0.5em;
+}
+
+footer section.copyright a {
+    background-image: none;
 }
 
 footer ul li {

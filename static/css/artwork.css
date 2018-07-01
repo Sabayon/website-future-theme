@@ -35,18 +35,21 @@
 }
 
 .artwork a {
+    --background-colour: var(--secondary-background-colour);
     display: inline-block;
-    background-color: var(--secondary-background-colour);
+    background-color: var(--background-colour);
     color: var(--secondary-text-colour);
 
+    margin-inline-end: 0.5em;
     margin-block-end: 0.5em;
-    padding: 0.25em 0.5em;
+    padding: 0.25em 0.15em;
 
     font-family: sans-serif;
     text-decoration: none;
 }
 
 .artwork a + a {
-    background-color: var(--primary-background-colour);
+    --background-colour: var(--primary-background-colour);
+    background-color: var(--background-colour);
     color: var(--primary-text-colour);
 }
