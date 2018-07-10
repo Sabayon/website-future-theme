@@ -1,8 +1,8 @@
 name = "Sabayon"
 license = "MIT"
-licenselink = "https://github.com/Sabayon/sabayon-website-next-theme/blob/master/LICENSE.md"
-description = "Official Sabayon website theme"
-homepage = "https://github.com/Sabayon/sabayon-website-next-theme"
+licenselink = "https://github.com/Sabayon/website-future-theme/blob/master/LICENSE.md"
+description = "Official Sabayon website future theme"
+homepage = "https://github.com/Sabayon/website-future-theme"
 tags = ["blog"]
 features = ["Simple Design", "Blog"]
 min_version = 0.14
